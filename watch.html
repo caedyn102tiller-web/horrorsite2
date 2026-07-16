@@ -1,24 +1,95 @@
-<h1 id="text">LOADING FEED...</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signal Loading</title>
 
-<script>
-let lines = [
- "Connecting...",
- "Signal unstable...",
- "User detected...",
- "Wait...",
- "Why are you here?"
-];
+  <style>
+    body {
+      background-color: #000;
+      color: #ff2a2a;
+      font-family: monospace;
+      margin: 0;
 
-let i = 0;
-setInterval(() => {
- if(i < lines.length){
-   document.getElementById("text").innerText = lines[i];
-   i++;
- }
-}, 2000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
 
-// Secret unlock after time
-setTimeout(() => {
-  window.location.href = "signal.html";
-}, 15000);
-</script>
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #text {
+      font-size: 26px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    #subtext {
+      font-size: 14px;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+
+    .bar {
+      width: 200px;
+      height: 6px;
+      background-color: #111;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background-color: #ff2a2a;
+      animation: load 15s linear forwards;
+    }
+
+    @keyframes load {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <div id="text">UNIDENTIFIED SIGNAL</div>
+    <div id="subtext">you don’t have a choice</div>
+
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    let lines = [
+      "CONNECTING",
+      "SIGNAL UNSTABLE",
+      "USER DETECTED",
+      "UNAUTHORIZED ACCESS",
+      "TRACKING",
+      "WHY ARE YOU HERE",
+      "ACCESSING FEED"
+    ];
+
+    let i = 0;
+
+    setInterval(() => {
+      if (i < lines.length) {
+        document.getElementById("text").innerText = lines[i];
+        i++;
+      }
+    }, 2000);
+
+    setTimeout(() => {
+      window.location.href = "signal.html";
+    }, 15000);
+  </script>
+
+</body>
+</html>
