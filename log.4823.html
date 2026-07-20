@@ -1,20 +1,103 @@
-<h1>PLAYBACK LOG: 4823</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playback Log 4823</title>
 
-<p>Insert code from the video:</p>
+  <style>
+    body {
+      background-color: black;
+      color: #ff2a2a;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
 
-<input id="code">
-<button onclick="check()">ENTER</button>
+    h1 {
+      letter-spacing: 3px;
+    }
 
-<p id="result"></p>
+    input, button {
+      background: black;
+      border: 1px solid #ff2a2a;
+      color: #ff2a2a;
+      padding: 8px;
+      font-family: monospace;
+      margin-top: 10px;
+    }
 
-<script>
-function check(){
- let code = document.getElementById("code").value;
+    button:hover {
+      background-color: #220000;
+      cursor: pointer;
+    }
 
- if(code === "YUB4823"){
-   window.location.href = "log_4823.html";
- } else {
-   document.getElementById("result").innerText = "Incorrect... it sees that.";
- }
-}
+    
+    .flicker {
+      animation: flicker 1.5s infinite;
+    }
 
+    @keyframes flicker {
+      0% { opacity: 1; }
+      10% { opacity: 0.3; }
+      20% { opacity: 1; }
+      30% { opacity: 0.1; }
+      40% { opacity: 1; }
+      60% { opacity: 0.4; }
+      70% { opacity: 1; }
+      80% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    #result {
+      margin-top: 20px;
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>
+    PLAYBACK 
+    <span class="flicker">LOG</span>: 
+    <span class="flicker">4823</span>
+  </h1>
+
+  <p>
+    Insert code from the <span class="flicker">video</span>:
+  </p>
+
+  <input id="code" autocomplete="off">
+  <br>
+  <button onclick="check()">ENTER</button>
+
+  <p id="result"></p>
+
+  <script>
+    function check(){
+      let code = document.getElementById("code").value;
+
+      
+      if(code === "YUB48X23"){
+        document.getElementById("result").innerText = "…signal accepted.";
+        
+        setTimeout(() => {
+          window.location.href = "log_4823.html";
+        }, 1200);
+
+      } else {
+        document.getElementById("result").innerText = "Incorrect... it sees that.";
+      }
+    }
+
+    
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        document.title = "DON'T LEAVE";
+      } else {
+        document.title = "Playback Log 4823";
+      }
+    });
+  </script>
+
+</body>
+</html>
