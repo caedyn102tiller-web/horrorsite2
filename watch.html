@@ -33,6 +33,11 @@
       font-size: 14px;
       color: #ff4d4d;
       margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    #subtext:hover {
+      text-decoration: underline;
     }
 
     .bar {
@@ -59,7 +64,7 @@
 
   <div id="container">
     <div id="text">UNIDENTIFIED SIGNAL</div>
-    <div id="subtext">TURN BACK</div>
+    <div id="subtext" onclick="goBack()">TURN BACK</div>
 
     <div class="bar">
       <div class="progress"></div>
@@ -85,6 +90,14 @@
         i++;
       }
     }, 2000);
+
+    // 🔐 SECRET PATH (with flavor)
+    function goBack() {
+      document.getElementById("subtext").innerText = "…you chose to listen.";
+      setTimeout(() => {
+        window.location.href = "log.4823.html";
+      }, 1500);
+    }
 
     setTimeout(() => {
       window.location.href = "signal.html";
