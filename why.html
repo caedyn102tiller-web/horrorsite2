@@ -62,29 +62,6 @@
   <div id="log"></div>
 
   <button id="continueBtn">[CONTINUE]</button>
-    let currentEntry = 0;
-let isTyping = false;
-
-const button = document.getElementById("continueBtn");
-
-button.addEventListener("click", () => {
-  if (isTyping) return; // prevents spam clicking
-
-  if (currentEntry < entries.length) {
-    isTyping = true;
-
-    typeEntry(entries[currentEntry], () => {
-      isTyping = false;
-      currentEntry++;
-
-      // optional: disable button at end
-      if (currentEntry >= entries.length) {
-        button.innerText = "[END OF LOG]";
-        button.disabled = true;
-      }
-    });
-  }
-});
 
   <audio id="creepyAudio" src="creepy.mp3"></audio>
 
