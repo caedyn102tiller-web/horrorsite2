@@ -110,23 +110,37 @@ journal entry 4
 
     // 👁️ WORD SYNC PER ENTRY
     const script = [
-      // ENTRY 1
-      { time: 4.0, word: "\"it's", entry: 1 },
-      { time: 4.5, word: "reacting", entry: 1 },
-      { time: 5.0, word: "when", entry: 1 },
-      { time: 5.3, word: "i", entry: 1 },
-      { time: 5.6, word: "go", entry: 1 },
+      // ENTRY 1    [
+{ time: 0.5, word: "\"it's", entry: 0 },
+{ time: 0.9, word: "reacting", entry: 0 },
+{ time: 1.4, word: "when", entry: 0 },
+{ time: 1.7, word: "i", entry: 0 },
+{ time: 2.0, word: "go", entry: 0 },
+{ time: 2.3, word: "through", entry: 0 },
+{ time: 2.8, word: "the", entry: 0 },
+{ time: 3.1, word: "pages.", entry: 0 },
+
+{ time: 4.2, word: "i", entry: 0 },
+{ time: 4.5, word: "guess", entry: 0 },
+{ time: 4.9, word: "it", entry: 0 },
+{ time: 5.2, word: "doesn't", entry: 0 },
+{ time: 5.7, word: "like", entry: 0 },
+{ time: 6.1, word: "when", entry: 0 },
+{ time: 6.4, word: "i", entry: 0 },
+{ time: 6.7, word: "continue", entry: 0 },
+{ time: 7.2, word: "on.\"", entry: 0 },
+]
       
       // ENTRY 2
-      { time: 10.0, word: "\"This", entry: 2 },
-      { time: 10.5, word: "infection", entry: 2 },
-      { time: 11.0, word: "is", entry: 2 },
+      { time: 10.0, word: "\"This", entry: 1 },
+      { time: 10.5, word: "infection", entry: 1 },
+      { time: 11.0, word: "is", entry: 1 },
 
       // ENTRY 3
-      { time: 18.0, word: "\"Dangit!", entry: 3 },
+      { time: 18.0, word: "\"Dangit!", entry: 2 },
 
       // ENTRY 4
-      { time: 25.0, word: "\"new", entry: 4 }
+      { time: 25.0, word: "\"new", entry: 3 }
     ];
 
     const audio = document.getElementById("creepyAudio");
